@@ -1,0 +1,15 @@
+uint64 packet_timestamp
+int32 stage
+int32 stage_time_left
+int32 command
+uint32 command_counter
+uint64 command_timestamp
+RefereeTeamInfo yellow
+RefereeTeamInfo blue
+float32 designated_position_x
+float32 designated_position_y
+bool blue_team_on_positive_half
+int32 next_command
+int32 current_action_time_remaining
+string source_identifier
+int32 match_type

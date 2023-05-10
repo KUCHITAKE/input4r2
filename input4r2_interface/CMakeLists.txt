@@ -15,6 +15,11 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/vision/geometry/GeometryCameraCalibration.msg"
   "msg/vision/geometry/GeometryFieldSize.msg"
   "msg/vision/geometry/GeometryData.msg"
+  "msg/gc/referee/MatchType.msg"
+  "msg/gc/referee/RefereeCommand.msg"
+  "msg/gc/referee/RefereeStage.msg"
+  "msg/gc/referee/RefereeTeamInfo.msg"
+  "msg/gc/referee/Referee.msg"
   DEPENDENCIES std_msgs
 )
 

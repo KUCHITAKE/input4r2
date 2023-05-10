@@ -136,6 +136,7 @@ input4r2_interface::msg::GeometryData Vision::convert_geometry(
     field_line_segment.x2 = line.p2().x();
     field_line_segment.y2 = line.p2().y();
     field_line_segment.thickness = line.thickness();
+    field_line_segment.shape_type= line.type();
 
     field_line_segments.push_back(field_line_segment);
   }
@@ -151,6 +152,7 @@ input4r2_interface::msg::GeometryData Vision::convert_geometry(
     field_circular_arc.a1 = arc.a1();
     field_circular_arc.a2 = arc.a2();
     field_circular_arc.thickness = arc.thickness();
+    field_circular_arc.shape_type = arc.type();
 
     field_circular_arcs.push_back(field_circular_arc);
   }

@@ -5,4 +5,4 @@ float32 radius
 float32 a1
 float32 a2
 float32 thickness
-FieldShapeType shape_type
+int32 shape_type

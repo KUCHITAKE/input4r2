@@ -7,4 +7,3 @@ float32 confidence
 float32 pixel_x
 float32 pixel_y
 uint32 area
-
