@@ -19,7 +19,8 @@ add_library(vision SHARED
   include/input4r2_vision/vision.hpp
 )
 target_include_directories(vision PUBLIC
-  include
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
 )
 rclcpp_components_register_nodes(vision "input4r2_vision::Vision")
 ament_target_dependencies(vision
