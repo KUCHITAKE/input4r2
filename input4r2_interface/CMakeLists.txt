@@ -24,6 +24,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/gc/referee/Referee.msg"
 
   "msg/comm/RobotCommand.msg"
+  "msg/comm/Command.msg"
 
   DEPENDENCIES std_msgs geometry_msgs
 )

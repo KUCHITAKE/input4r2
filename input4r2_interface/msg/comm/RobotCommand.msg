@@ -1,4 +1,5 @@
 geometry_msgs/Twist cmd_vel
+uint32 id
 float32 kick_speed_x
 float32 kick_speed_z
 float32 dribble_speed

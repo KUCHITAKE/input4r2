@@ -12,6 +12,14 @@
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>libboost-system-dev</depend>
+  <depend>libprotobuf-dev</depend>
+  <build_depend>input4r2_interface</build_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>

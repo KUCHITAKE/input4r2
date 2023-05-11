@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(input4r2_interface REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(Protobuf REQUIRED)
@@ -45,6 +46,32 @@ target_link_libraries(grsim_sender_node
   grsim_sender
 )
 
+add_library(joy2command SHARED
+  src/joy2command.cpp
+  include/input4r2_command_sender/joy2command.hpp
+)
+target_include_directories(joy2command PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+rclcpp_components_register_nodes(joy2command "input4r2_command_sender::Joy2Command")
+ament_target_dependencies(joy2command
+  rclcpp
+  rclcpp_components
+  sensor_msgs
+  input4r2_interface
+)
+
+add_executable(joy2command_node
+  src/joy2command_node.cpp
+)
+ament_target_dependencies(joy2command_node
+  rclcpp
+)
+target_link_libraries(joy2command_node
+  joy2command
+)
+
 install(TARGETS
   grsim_sender
   ARCHIVE DESTINATION lib
@@ -54,6 +81,18 @@ install(TARGETS
 
 install(TARGETS
   grsim_sender_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(TARGETS
+  joy2command
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+install(TARGETS
+  joy2command_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
